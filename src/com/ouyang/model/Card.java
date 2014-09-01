@@ -1,4 +1,4 @@
-package com.android.game2048;
+package com.ouyang.model;
 
 
 import android.content.Context;
@@ -114,7 +114,7 @@ public class Card extends FrameLayout {
 	
 	public void addScaleAnimation(){
 		ScaleAnimation sa = new ScaleAnimation(0.1f, 1, 0.1f, 1, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-		sa.setDuration(1000);
+		sa.setDuration(1);
 		setAnimation(null);
 		getLabel().startAnimation(sa);
 	}

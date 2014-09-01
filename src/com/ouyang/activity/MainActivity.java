@@ -8,10 +8,10 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.android.game2048.GameView;
 import com.android.game2048.R;
 import com.android.game2048.R.id;
 import com.android.game2048.R.layout;
+import com.ouyang.view.GameView;
 
 
 public class MainActivity extends Activity {

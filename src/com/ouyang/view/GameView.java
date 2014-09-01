@@ -1,10 +1,11 @@
-package com.android.game2048;
+package com.ouyang.view;
 
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.ouyang.activity.MainActivity;
+import com.ouyang.model.Card;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -18,7 +19,7 @@ import android.widget.LinearLayout;
 
 public class GameView extends LinearLayout {
 
-	private final int LINES = 4;
+	private final int LINES = 5;
 	private Card[][] cardsMap = new Card[LINES][LINES];
 	private List<Point> emptyPoints = new ArrayList<Point>();
 	private MainActivity.Score score;
