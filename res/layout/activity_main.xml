@@ -37,26 +37,35 @@
             android:textAppearance="?android:attr/textAppearanceLarge" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnNewGame"
+    <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/newgame" />
-    <Button
-        android:id="@+id/btnYangxi"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/yangxi" />
-    <Button
-        android:id="@+id/btnSave"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/save" />
-    <Button
-        android:id="@+id/btnRead"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/read" />
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btnNewGame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/newgame" />
+
+        <Button
+            android:id="@+id/btnYangxi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/yangxi" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/save" />
+
+        <Button
+            android:id="@+id/btnRead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/read" />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/gameContainer"
@@ -64,13 +73,11 @@
         android:layout_height="0dp"
         android:layout_weight="1" >
 
-        <com.ouyang.view.GameView
+        <com.zishinan.forever2048.model.GameView
             android:id="@+id/gameView"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent" >
-        </com.ouyang.view.GameView>
-
+        </com.zishinan.forever2048.model.GameView>
     </LinearLayout>
-
 
 </LinearLayout>
