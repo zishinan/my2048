@@ -1,4 +1,4 @@
-package com.ouyang.model;
+package com.zishinan.forever2048.model;
 
 
 import android.content.Context;

@@ -1,11 +1,8 @@
-package com.ouyang.view;
+package com.zishinan.forever2048.model;
 
 
 import java.util.ArrayList;
 import java.util.List;
-
-import com.ouyang.activity.MainActivity;
-import com.ouyang.model.Card;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -17,12 +14,14 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import com.zishinan.forever2048.activity.ActMain;
+
 public class GameView extends LinearLayout {
 
-	private final int LINES = 5;
+	private final int LINES = 4;
 	private Card[][] cardsMap = new Card[LINES][LINES];
 	private List<Point> emptyPoints = new ArrayList<Point>();
-	private MainActivity.Score score;
+	private ActMain.Score score;
 
 	
 	public GameView(Context context) {
@@ -326,7 +325,7 @@ public class GameView extends LinearLayout {
 			}
 
 		if (complete) {
-			new AlertDialog.Builder(getContext()).setTitle("Finished").setMessage("Game Over").setPositiveButton("start again?", new DialogInterface.OnClickListener() {
+			new AlertDialog.Builder(getContext()).setTitle("游戏结束").setMessage("游戏结束！").setPositiveButton("重新开始", new DialogInterface.OnClickListener() {
 
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
@@ -337,7 +336,7 @@ public class GameView extends LinearLayout {
 		
 	}
 
-	public void setScore(MainActivity.Score score) {
+	public void setScore(ActMain.Score score) {
 		this.score = score;
 		
 	}

@@ -1,4 +1,4 @@
-package com.ouyang.activity;
+package com.zishinan.forever2048.activity;
 
 import android.app.Activity;
 import android.content.SharedPreferences.Editor;
@@ -8,13 +8,11 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.android.game2048.R;
-import com.android.game2048.R.id;
-import com.android.game2048.R.layout;
-import com.ouyang.view.GameView;
+import com.zishinan.forever2048.R;
+import com.zishinan.forever2048.model.GameView;
 
-
-public class MainActivity extends Activity {
+public class ActMain extends Activity
+{
 
 	private TextView scoreTextView,bestScoreTextView;
 	private Button buttoNewGame;

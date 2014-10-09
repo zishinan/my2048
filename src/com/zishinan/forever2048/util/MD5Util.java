@@ -1,4 +1,4 @@
-package com.ouyang.util;
+package com.zishinan.forever2048.util;
 
 import java.security.MessageDigest;
 
