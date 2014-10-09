@@ -4,6 +4,9 @@ package com.zishinan.forever2048.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.xml.transform.Templates;
+
+import android.R.integer;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -20,6 +23,32 @@ public class GameView extends LinearLayout {
 
 	private final int LINES = 4;
 	private Card[][] cardsMap = new Card[LINES][LINES];
+	public String getCardsMap()
+	{
+		StringBuilder sb = new StringBuilder();
+		for (Card[] card : cardsMap)
+		{
+			for (Card temp : card)
+			{
+				sb.append(temp.getNum()).append("_");
+			}
+		}
+		return sb.toString();
+	}
+
+	public void setCardsMap(String cardsMap)
+	{
+		String[] cards = cardsMap.split("_");
+		int i = 0;
+		for (Card[] card : this.cardsMap)
+		{
+			for (Card temp : card)
+			{
+				temp.setNum(Integer.parseInt(cards[i++]));
+			}
+		}
+	}
+
 	private List<Point> emptyPoints = new ArrayList<Point>();
 	private ActMain.Score score;
 
@@ -46,6 +75,7 @@ public class GameView extends LinearLayout {
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
 
+				int distance = 10;
 				switch (event.getAction()) {
 				case MotionEvent.ACTION_DOWN:
 					startX = event.getX();
@@ -57,15 +87,15 @@ public class GameView extends LinearLayout {
 
 
 					if (Math.abs(offsetX)>Math.abs(offsetY)) {
-						if (offsetX<-5) {
+						if (offsetX<-distance) {
 							swipeLeft();
-						}else if (offsetX>5) {
+						}else if (offsetX>distance) {
 							swipeRight();
 						}
 					}else{
-						if (offsetY<-5) {
+						if (offsetY<-distance) {
 							swipeUp();
-						}else if (offsetY>5) {
+						}else if (offsetY>distance) {
 							swipeDown();
 						}
 					}
