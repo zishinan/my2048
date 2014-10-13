@@ -29,7 +29,7 @@ public class ActMain extends Activity
 		setContentView(R.layout.activity_main);
 		
 		btnNewGame = (Button) findViewById(R.id.btnNewGame);
-		btnYangxi = (Button) findViewById(R.id.btnYangxi);
+//		btnYangxi = (Button) findViewById(R.id.btnYangxi);
 		btnSave = (Button) findViewById(R.id.btnSave);
 		btnRead = (Button) findViewById(R.id.btnRead);
 		scoreTextView = (TextView) findViewById(R.id.score);
@@ -46,12 +46,12 @@ public class ActMain extends Activity
 				startNewGame();
 			}
 		});
-		btnYangxi.setOnClickListener(new OnClickListener() {
+		/*btnYangxi.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
 				yangxiGame();
 			}
-		});
+		});*/
 		btnSave.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
@@ -101,6 +101,7 @@ public class ActMain extends Activity
 			return;
 		}
 		gameView.setCardsMap(cardsMap);
+		score.setScore(score.getTheScore());
 		showTheScore();
 		showBestScore();
 	}
@@ -114,7 +115,7 @@ public class ActMain extends Activity
 	}
 	
 	private void showTheScore(){
-		scoreTextView.setText(score.getTheScore());
+		scoreTextView.setText(score.getTheScore() + "");
 	}
 	
 	
@@ -131,6 +132,11 @@ public class ActMain extends Activity
 		public int getScore()
 		{
 			return score;
+		}
+		
+		public void setScore(int s)
+		{
+			this.score = s;
 		}
 		
 		public void addScore(int s)

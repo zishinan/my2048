@@ -48,11 +48,11 @@
             android:layout_height="wrap_content"
             android:text="@string/newgame" />
 
-        <Button
+       <!--  <Button
             android:id="@+id/btnYangxi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/yangxi" />
+            android:text="@string/yangxi" /> -->
 
         <Button
             android:id="@+id/btnSave"
