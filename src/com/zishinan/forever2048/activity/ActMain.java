@@ -75,12 +75,9 @@ public class ActMain extends Activity
 		showBestScore();
 		gameView.startGame();
 	}
+	
 	private void yangxiGame()
 	{
-		score.clearScore();
-		showScore();
-		showBestScore();
-		gameView.startGame();
 	}
 	
 	private void saveGame()
@@ -125,7 +122,8 @@ public class ActMain extends Activity
 		private static final String SP_KEY_BEST_SCORE = "bestScore";
 		private static final String SP_KEY_SCORE = "theScore";
 		
-		public void clearScore(){
+		public void clearScore()
+		{
 			score=0;
 		}
 		
@@ -143,12 +141,12 @@ public class ActMain extends Activity
 		{
 			score+=s;
 			showScore();
-
 			saveBestScore(Math.max(score, getBestScore()));
 			showBestScore();
 		}
 		
-		public void saveBestScore(int s){
+		public void saveBestScore(int s)
+		{
 			Editor e = getPreferences(MODE_PRIVATE).edit();
 			e.putInt(SP_KEY_BEST_SCORE, s);
 			e.commit();
@@ -164,11 +162,10 @@ public class ActMain extends Activity
 			e.commit();
 		}
 		
-		public int getTheScore(){
+		public int getTheScore()
+		{
 			return getPreferences(MODE_PRIVATE).getInt(SP_KEY_SCORE, 0);
 		}
-		
-		
 	}
 
 }
